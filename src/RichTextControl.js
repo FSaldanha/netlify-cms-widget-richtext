@@ -48,11 +48,16 @@ export default class Control extends React.Component {
 
     return (
       <div className={`${classNameWrapper} html-editor-widget`}>
-        <RichTextEditor
-          value={editorValue}
-          onChange={this.onEditorChange}
-        />
-        <details style={{ marginTop: '15px' }}>
+        <details>
+          <summary>
+            Rich Text
+          </summary>
+          <RichTextEditor
+            value={editorValue}
+            onChange={this.onEditorChange}
+          />
+        </details>
+        <details>
           <summary>
             HTML
           </summary>

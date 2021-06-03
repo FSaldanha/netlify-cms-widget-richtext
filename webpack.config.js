@@ -7,6 +7,7 @@ const developmentConfig = {
   output: {
     path: path.resolve(__dirname, 'public'),
   },
+  optimization: { minimize: false },
   module: {
     rules: [
       {
@@ -38,6 +39,10 @@ const productionConfig = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        loader: ['style-loader', 'css-loader'],
       },
     ],
   },

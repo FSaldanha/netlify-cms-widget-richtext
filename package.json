@@ -1,6 +1,7 @@
 {
   "name": "netlify-cms-widget-richtext",
   "description": "A rich text WYSIWYG editor widget for Netlify CMS.",
+  "author": "Felipe Saldanha",
   "keywords": [
     "netlify",
     "netlify-cms",
@@ -27,15 +28,12 @@
     "react": "^16.3.2",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.3",
-    "webpack": "^4.6.0",
+    "webpack": "4.19.1",
     "webpack-cli": "^2.0.14",
     "webpack-serve": "^0.3.1"
   },
   "dependencies": {
     "draft-js": "^0.11.7",
-    "draft-js-import-html": "^1.4.1",
-    "draftjs-to-html": "^0.9.1",
-    "html-to-draftjs": "^1.5.0",
     "prop-types": "^15.6.1",
     "react-draft-wysiwyg": "^1.14.7",
     "react-rte": "^0.16.3",
