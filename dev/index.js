@@ -17,7 +17,7 @@ const config = {
       name: 'test',
       label: 'Test',
       fields: [
-        { name: 'test_widget', label: 'Test Widget', widget: 'test'},
+        { name: 'test_widget', label: 'Rich Text Widget', widget: 'test' },
       ],
     }],
   }],
