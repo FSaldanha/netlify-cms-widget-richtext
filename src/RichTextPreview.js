@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import runSanitize from './lib'
+import { sanitizeHTML } from './lib'
 
 export default function Preview({ value }) {
-  return <div dangerouslySetInnerHTML={{ __html: runSanitize(value) }} />;
+  return <div dangerouslySetInnerHTML={{ __html: sanitizeHTML(value) }} />;
 }
 
 Preview.propTypes = {
