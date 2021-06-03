@@ -15,9 +15,9 @@ npm install --save netlify-cms-widget-richtext
 ```
 
 ```js
-import <name> from 'netlify-cms-widget-richtext'
+import richText from 'netlify-cms-widget-richtext'
 
-CMS.registerWidget('html', htmlControl, htmlPreview)
+CMS.registerWidget('richtext', richTextControl, richTextPreview)
 ```
 
 Via `script` tag:
