@@ -1,0 +1,18 @@
+.DraftEditor-root {
+  height: 200px;
+}
+
+.DraftEditor-editorContainer,
+.public-DraftEditor-content {
+  height: 100%;
+}
+
+.html-editor-widget summary {
+  cursor: pointer;
+}
+
+.html-editor-widget textarea {
+  height: 200px;
+  width: 100%;
+  resize: vertical;
+}

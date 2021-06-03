@@ -1,9 +1,9 @@
-import Control from './Control'
-import Preview from './Preview'
+import Control from './RichtextControl'
+import Preview from './RichtextPreview'
 
 if (typeof window !== 'undefined') {
-  window.Control = Control
-  window.Preview = Preview
+  window.RichtextControl = Control
+  window.RichtextPreview = Preview
 }
 
-export { Control, Preview }
+export { Control as RichtextControl, Preview as RichtextPreview }
