@@ -1,8 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import RichTextEditor from 'react-rte';
-import { toStringOptions, fromStringOptions, sanitizeHTML, getTextAlignClassName } from './lib'
+import { EditorState } from 'draft-js';
+import { Editor } from 'react-draft-wysiwyg';
+import { stateToHTML as contentToHTML } from 'draft-js-export-html';
+import { stateFromHTML as contentFromHTML } from 'draft-js-import-html';
+import { sanitizeHTML } from './lib'
 import './styles.css';
+import '../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 export default class Control extends React.Component {
   static propTypes = {
@@ -16,20 +20,20 @@ export default class Control extends React.Component {
     value: '',
   }
 
-  initialValue = this.props.value ? RichTextEditor.createValueFromString(this.props.value, 'html', fromStringOptions) : RichTextEditor.createEmptyValue();
+  initialValue = this.props.value ? EditorState.createWithContent(contentFromHTML(this.props.value)) : EditorState.createEmpty();
 
   state = {
-    editorValue: this.initialValue
+    editorState: this.initialValue,
   }
 
-  onRichEditorChange = editorValue => {
-    this.setState({ editorValue });
-    this.props.onChange(editorValue.toString('html', toStringOptions));
+  onRichEditorChange = editorState => {
+    this.setState({ editorState });
+    this.props.onChange(contentToHTML(editorState.getCurrentContent()));
   }
 
   onSourceEditorChange = e => {
-    const editorValue = RichTextEditor.createValueFromString(e.target.value, 'html', fromStringOptions);
-    this.onRichEditorChange(editorValue);
+    /*const editorState = EditorState.createWithContent(stateFromHTML(e.target.value));
+    this.onRichEditorChange(editorState);*/
   }
 
   onSourceEditorBlur = e => {
@@ -37,23 +41,24 @@ export default class Control extends React.Component {
   }
 
   render() {
-    const { editorValue } = this.state;
+    const { editorState } = this.state;
 
     const { classNameWrapper, forID } = this.props;
 
     return (
       <div
         id={forID}
-        className={`${classNameWrapper} html-editor-widget`}
+        className={`${classNameWrapper} rte-widget`}
       >
         <details open={true}>
           <summary>
             Rich Text
           </summary>
-          <RichTextEditor
-            value={editorValue}
-            onChange={this.onRichEditorChange}
-            blockStyleFn={getTextAlignClassName}
+          <Editor
+            defaultEditorState={editorState}
+            editorStyle={{ border: "1px solid #222", height: "200px" }}
+            onEditorStateChange={this.onRichEditorChange}
+            wrapperClassName="rte-wrapper"
           />
         </details>
         <details>
@@ -61,8 +66,7 @@ export default class Control extends React.Component {
             HTML
           </summary>
           <textarea
-            className='html-widget-source-editor'
-            value={editorValue.toString('html', toStringOptions)}
+            value={contentToHTML(editorState.getCurrentContent())}
             onChange={this.onSourceEditorChange}
             onBlur={this.onSourceEditorBlur}
           />

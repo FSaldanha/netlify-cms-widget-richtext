@@ -1,21 +1,12 @@
-.DraftEditor-root {
-  height: 200px;
-}
-
-.DraftEditor-editorContainer,
-.public-DraftEditor-content {
-  height: 100%;
-}
-
-.html-editor-widget details {
+.rte-widget details {
   margin: 8px 0;
 }
 
-.html-editor-widget summary {
+.rte-widget summary {
   cursor: pointer;
 }
 
-.html-editor-widget textarea {
+.rte-widget textarea {
   height: 200px;
   width: 100%;
   resize: vertical;
