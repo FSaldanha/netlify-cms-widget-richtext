@@ -2,7 +2,7 @@
 
 [Check out a demo!](https://netlify-cms-widget-richtext.netlify.com/demo)
 
-The rich text widget provides a <abbr title="What You See Is What You Get">WYSIWYG</abbr> editor based on [react-rte](https://react-rte.org/) and [Draft.js](https://draftjs.org/).
+The rich text widget provides a WYSIWYG _(What You See Is What You Get)_ editor based on [react-rte](https://react-rte.org/) and [Draft.js](https://draftjs.org/).
 
 _Please note:_ If you want to use your rich text editor to fill a markdown file contents after its frontmatter, you'll have to name the field `body` so the CMS recognizes it and saves the file accordingly.
 
@@ -23,7 +23,7 @@ CMS.registerWidget('richtext', RichTextControl, RichTextPreview)
 Via `script` tag:
 
 ```html
-<script src="https://unpkg.com/netlify-cms-widget-richtext@^1.0.0"></script>
+<script src="https://unpkg.com/netlify-cms-widget-richtext@^0.1.0"></script>
 
 <script>
   CMS.registerWidget('richtext', RichTextControl, RichTextPreview)
