@@ -28,7 +28,7 @@ export default class Control extends React.Component {
 
   fromStringOptions = { customBlockFn: getTextAlignBlockMetadata }
 
-  initialValue = this.props.value ? RichTextEditor.createValueFromString(this.props.value, 'html', fromStringOptions) : RichTextEditor.createEmptyValue();
+  initialValue = this.props.value ? RichTextEditor.createValueFromString(this.props.value, 'html', this.fromStringOptions) : RichTextEditor.createEmptyValue();
 
   state = {
     editorValue: this.initialValue
