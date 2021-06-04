@@ -1,14 +1,10 @@
 import { stateToHTML } from 'draft-js-export-html';
 import { stateFromHTML } from 'draft-js-import-html';
 
-export const toStringOptions = { blockStyleFn: getTextAlignStyles }
-
-export const fromStringOptions = { customBlockFn: getTextAlignBlockMetadata }
-
 export const sanitizeHTML = value => {
-  const state = stateFromHTML(value, fromStringOptions);
+  const state = stateFromHTML(value, { customBlockFn: getTextAlignBlockMetadata });
   /* Cannot use EditorValue.toString() here because cache does not run sanitization */
-  return stateToHTML(state, toStringOptions);
+  return stateToHTML(state, { blockStyleFn: getTextAlignStyles });
 }
 
 export const getTextAlignClassName = (contentBlock) => {
