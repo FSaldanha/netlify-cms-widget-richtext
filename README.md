@@ -45,9 +45,9 @@ This package is still in beta. Be careful when using it in production.
 
 ## To-do list
 
-[ ] More heading options
-[ ] Improve image selector
-[ ] Include font-size, color and media selectors
+- [ ] More heading options
+- [ ] Improve image selector
+- [ ] Include font-size, color and media selectors
 
 ## Support
 
