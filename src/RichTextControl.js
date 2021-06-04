@@ -32,8 +32,8 @@ export default class Control extends React.Component {
   }
 
   onSourceEditorChange = e => {
-    /*const editorState = EditorState.createWithContent(stateFromHTML(e.target.value));
-    this.onRichEditorChange(editorState);*/
+    const editorState = EditorState.createWithContent(contentFromHTML(e.target.value));
+    this.onRichEditorChange(editorState);
   }
 
   onSourceEditorBlur = e => {
@@ -43,7 +43,7 @@ export default class Control extends React.Component {
   render() {
     const { editorState } = this.state;
 
-    const { classNameWrapper, forID } = this.props;
+    const { classNameWrapper, value, forID } = this.props;
 
     return (
       <div
@@ -66,7 +66,7 @@ export default class Control extends React.Component {
             HTML
           </summary>
           <textarea
-            value={contentToHTML(editorState.getCurrentContent())}
+            value={value}
             onChange={this.onSourceEditorChange}
             onBlur={this.onSourceEditorBlur}
           />
