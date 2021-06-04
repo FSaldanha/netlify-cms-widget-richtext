@@ -16,11 +16,19 @@ export default class Control extends React.Component {
     value: '',
   }
 
-  initialValue = this.props.value ? RichTextEditor.createValueFromString(this.props.value, 'html', fromStringOptions) : RichTextEditor.createEmptyValue();
-
-  toStringOptions = { blockStyleFn: getTextAlignStyles }
+  toStringOptions = {
+    blockStyleFn: getTextAlignStyles, blockRenderers: {
+      unstyled: (block) => {
+        if (!block.getText().trim().length) {
+          return "";
+        }
+      }
+    }
+  }
 
   fromStringOptions = { customBlockFn: getTextAlignBlockMetadata }
+
+  initialValue = this.props.value ? RichTextEditor.createValueFromString(this.props.value, 'html', fromStringOptions) : RichTextEditor.createEmptyValue();
 
   state = {
     editorValue: this.initialValue
@@ -29,7 +37,6 @@ export default class Control extends React.Component {
   onRichEditorChange = editorValue => {
     this.setState({ editorValue });
     this.props.onChange(editorValue.toString('html', this.toStringOptions));
-    console.log(editorValue.toString('html', this.toStringOptions));
   }
 
   onSourceEditorChange = e => {
