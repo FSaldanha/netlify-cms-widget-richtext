@@ -35,13 +35,19 @@ Via `script` tag:
 Add to your Netlify CMS configuration:
 
 ```yaml
-    fields:
-      - { name: 'body', label: 'Blog post content', widget: 'richtext' }
+fields:
+  - { name: 'body', label: 'Blog post content', widget: 'richtext' }
 ```
 
 ## Notice
 
 This package is still in beta. Be careful when using it in production.
+
+## To-do list
+
+[ ] More heading options
+[ ] Improve image selector
+[ ] Include font-size, color and media selectors
 
 ## Support
 
