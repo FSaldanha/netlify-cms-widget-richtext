@@ -11,7 +11,7 @@
     "editor"
   ],
   "version": "0.1.3",
-  "homepage": "https://github.com/FSaldaha/netlify-cms-widget-richtext",
+  "homepage": "https://github.com/FSaldanha/netlify-cms-widget-richtext",
   "license": "MIT",
   "main": "dist/main.js",
   "devDependencies": {
