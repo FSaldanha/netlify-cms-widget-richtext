@@ -10,7 +10,7 @@
     "html",
     "editor"
   ],
-  "version": "0.1.4",
+  "version": "0.1.5",
   "homepage": "https://github.com/FSaldanha/netlify-cms-widget-richtext",
   "license": "MIT",
   "main": "dist/main.js",
@@ -37,7 +37,6 @@
     "draft-js-export-html": "^1.4.1",
     "draft-js-import-html": "^1.4.1",
     "prop-types": "^15.6.1",
-    "react-draft-wysiwyg": "^1.14.7",
     "react-rte": "^0.16.3"
   },
   "peerDependencies": {
